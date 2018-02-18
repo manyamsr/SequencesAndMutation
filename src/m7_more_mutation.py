@@ -1,11 +1,10 @@
 """
 This module lets you practice   MUTATION   of objects
 by changing the values of instance variables.
-
 Authors: David Mutchler, Amanda Stouder, Chandan Rupakheti, Katie Dion,
          Claude Anderson, Delvin Defoe, Curt Clifton, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Sreekar Manyam.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 
@@ -160,21 +159,23 @@ def RETURN_circle(circle, color):
     """
     Returns a NEW rg.Circle that is a CLONE (copy) of the given circle,
     but with its color set to the given color.
-
     This function must NOT mutate the given circle or color.
-
     Preconditions:
       :type circle:  rg.Circle
       :type color: (str, rg.Color)
     where the color is either a string that Rosegraphics understands
     or a rg.Color object.
     """
-    # TODO: 2. First, READ THE ABOVE TEST CODE.
+    # DONE: 2. First, READ THE ABOVE TEST CODE.
     #          Make sure that you understand it.
     #          Then, IMPLEMENT and test THIS FUNCTION
     #          (using the above code for testing).
     #
     # HINT: Use the   clone   method to make the copy.
+
+    new_circle = rg.Circle(circle.center,circle.radius)
+    new_circle.fill_color = color
+    return new_circle
 
 
 def run_test_MUTATE_circle():
@@ -294,14 +295,12 @@ def MUTATE_circle(circle, color, n):
     MUTATES the given circle, so that:
       1. its fill color becomes the given color, and
       2. it is centered   n   pixels to the right of where it was centered.
-
     This function must NOT construct any new circles.
     This function must NOT return anything (other than the default None).
-
     Precondition: The first argument is a rg.Circle and the second
                   argument is a color appropriate for Zellegraphics.
     """
-    # TODO: 3. First, READ THE ABOVE TEST CODE.
+    # DONE: 3. First, READ THE ABOVE TEST CODE.
     #          Make sure that you understand it.
     #          Then, IMPLEMENT and test THIS FUNCTION
     #          (using the above code for testing).
@@ -312,5 +311,9 @@ def MUTATE_circle(circle, color, n):
 # If this module is running at the top level (as opposed to being
 # imported by another module), then call the 'main' function.
 # ----------------------------------------------------------------------
+    circle.fill_color = color
+    circle.center.x += n
+
+
 if __name__ == '__main__':
     main()

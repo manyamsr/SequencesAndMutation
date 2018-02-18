@@ -1,11 +1,10 @@
 """
 This module lets you practice   MUTATION   of lists.
 In this module, you mutate by DELETING elements of a list.
-
 Authors: David Mutchler, Amanda Stouder, Chandan Rupakheti, Katie Dion,
          Claude Anderson, Delvin Defoe, Curt Clifton, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Sreekar Manyam.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import m6_mutation
 
@@ -55,23 +54,26 @@ def RETURN_delete_negatives(numbers):
     """
     Returns a NEW list that is the same as the given list of numbers,
     but with each negative number in the list DELETED from the list.
-
     For example, if the given list is [-30.2, 50, 12.5, -1, -5, 8, 0].
     then the returned list is the NEW list [50, 12.5, 8, 0].
-
     This function must NOT mutate the given list.
-
     Precondition:
       :type numbers: list
     where the list is a list of numbers.
     """
-    # TODO: 2. First, READ THE ABOVE TEST CODE.
+    # DONE: 2. First, READ THE ABOVE TEST CODE.
     #          Make sure that you understand it.
     #          In particular, note how it calls the   run_test   function
     #          from the module   m6_mutation   by using the notation:
     #             m6_mutation.run_test(...)
     #          Then, IMPLEMENT and test THIS FUNCTION
     #          (using the above code for testing).
+
+    num_list = []
+    for k in range(len(numbers)):
+        if numbers[k] >= 0:
+            num_list [numbers[k]]
+    return num_list
 
 
 def run_test_MUTATE_delete_negatives():
@@ -114,17 +116,14 @@ def MUTATE_delete_negatives(numbers):
     """
     MUTATES the given list of numbers so that each negative number
     in the list is DELETED from the list.
-
     For example, if the given list is [-30.2, 50, 12.5, -1, -5, 8, 0].
     then that list is MUTATED to become [50, 12.5, 8, 0].
-
     This function MAY use ONE additional list beyond the given list
     (but see if you can solve the problem WITHOUT any additional lists).
     The function must NOT return anything (other than the default None).
-
     Precondition: The argument is a list of numbers.
     """
-    # TODO: 3. First, READ THE ABOVE TEST CODE.
+    # DONE: 3. First, READ THE ABOVE TEST CODE.
     #          Make sure that you understand it.
     #          In particular, note how it calls the   run_test   function
     #          from the module   m6_mutation   by using the notation:
@@ -143,5 +142,11 @@ def MUTATE_delete_negatives(numbers):
 # If this module is running at the top level (as opposed to being
 # imported by another module), then call the 'main' function.
 # ----------------------------------------------------------------------
+
+    for k in range(len(numbers)-1, -1, -1):
+        if numbers[k] < 0:
+            del numbers[k]
+
+
 if __name__ == '__main__':
     main()
